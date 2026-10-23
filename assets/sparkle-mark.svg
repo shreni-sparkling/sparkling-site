@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<defs><path id="s" d="M50 0 C54 34 66 46 100 50 C66 54 54 66 50 100 C46 66 34 54 0 50 C34 46 46 34 50 0Z"/></defs>
+<g fill="#2E1F3A">
+<use href="#s" transform="translate(36,10) scale(1.0)"/>
+<use href="#s" transform="translate(36,104) scale(1.0)"/>
+<use href="#s" transform="translate(124,66) scale(0.92)"/>
+<use href="#s" transform="translate(124,152) scale(0.92)"/>
+</g></svg>
