@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/sparkling-jewelry-design-system-2-019dfbdc-f410-7b5f-bb4f-4a5c94bc7200/colors_and_type.css">
+<script src="_ds/sparkling-jewelry-design-system-2-019dfbdc-f410-7b5f-bb4f-4a5c94bc7200/_ds_bundle.js"></script>
+<script src="sj-address.js"></script>
+<style>@keyframes sjAfIn{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:none}}@media (prefers-reduced-motion: reduce){[style*="sjAfIn"]{animation:none!important}}</style>
+</helmet>
+<div role="group" aria-label="{{ groupLabel }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:14px 18px;min-width:0;font-family:'Open Sauce Sans',Arial,sans-serif">
+<sc-for list="{{ rows }}" as="r" hint-placeholder-count="5">
+<div style="grid-column:{{ r.col }};position:relative;display:flex;flex-direction:column;gap:5px;min-width:0">
+<label for="{{ r.id }}" style="font-size:10px;font-weight:600;letter-spacing:1.6px;color:#3B5255;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.label }}<span style="font-weight:500;letter-spacing:0.4px;color:#7E9E9D">{{ r.opt }}</span><span style="color:#A3354A">{{ r.star }}</span></label>
+<div style="position:relative">
+<input id="{{ r.id }}" type="text" inputmode="{{ r.im }}" autocomplete="{{ r.ac }}" role="{{ r.role }}" aria-autocomplete="{{ r.aac }}" aria-expanded="{{ r.expS }}" aria-controls="{{ r.lbId }}" aria-activedescendant="{{ r.ad }}" aria-invalid="{{ r.invS }}" value="{{ r.text }}" placeholder="{{ r.ph }}" onFocus="{{ r.focus }}" onBlur="{{ r.blur }}" onChange="{{ r.change }}" onKeyDown="{{ r.key }}" style="width:100%;min-width:0;height:44px;padding:0 {{ r.padR }} 0 12px;border:{{ r.bd }};border-radius:0;background:#FFFFFF;font-size:15px;color:#2F4243;outline:none;transition:border-color 150ms,box-shadow 150ms" style-focus="border-color:#604073;box-shadow:0 0 0 3px rgba(96,64,115,0.14)">
+<sc-if value="{{ r.isCombo }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="position:absolute;right:0;top:0;width:36px;height:44px;display:flex;align-items:center;justify-content:center;color:#5D7F83;pointer-events:none"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span></sc-if>
+<sc-if value="{{ r.open }}" hint-placeholder-val="{{ false }}"><div id="{{ r.lbId }}" role="listbox" style="position:absolute;z-index:60;top:47px;left:0;right:0;max-height:248px;overflow:auto;background:#FFFFFF;border:1px solid #C3CFCC;box-shadow:0 8px 22px rgba(38,29,61,0.12);animation:sjAfIn 150ms cubic-bezier(.2,.8,.2,1)">
+<sc-for list="{{ r.opts }}" as="o"><div id="{{ o.id }}" role="option" aria-selected="{{ o.selS }}" onMouseDown="{{ o.pick }}" onMouseEnter="{{ o.hover }}" style="display:flex;align-items:center;gap:10px;padding:9px 12px;background:{{ o.bg }};border-left:2px solid {{ o.edge }};cursor:pointer;font-size:14px;color:#2F4243"><span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ o.t }}</span><span style="font-size:11px;font-weight:600;letter-spacing:0.6px;color:#7E9E9D;white-space:nowrap">{{ o.sub }}</span></div></sc-for>
+<sc-if value="{{ r.empty }}" hint-placeholder-val="{{ false }}"><div style="padding:10px 12px;font-size:13px;color:#5D7F83">{{ r.emptyT }}</div></sc-if>
+<sc-if value="{{ r.hasFoot }}" hint-placeholder-val="{{ false }}"><div style="padding:6px 12px;border-top:1px solid #EEF1F1;font-size:10px;letter-spacing:0.4px;color:#8E9A9B">{{ r.foot }}</div></sc-if>
+</div></sc-if>
+</div>
+<sc-if value="{{ r.hasErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:12px;line-height:17px;color:#A3354A">{{ r.err }}</span></sc-if>
+<sc-if value="{{ r.hasNote }}" hint-placeholder-val="{{ false }}"><span style="font-size:11.5px;line-height:16px;color:#5D7F83">{{ r.note }}</span></sc-if>
+</div>
+</sc-for>
+<sc-if value="{{ zipOn }}" hint-placeholder-val="{{ false }}"><div role="status" style="grid-column:1 / -1;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:10px 12px;background:{{ zipBg }};border:1px solid {{ zipBd }};font-size:13px;line-height:19px;color:#2F4243;animation:sjAfIn 180ms cubic-bezier(.2,.8,.2,1)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="{{ zipIc }}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:0 0 16px"><path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg><span style="flex:1 1 220px;min-width:0">{{ zipMsg }}</span><sc-for list="{{ zipActs }}" as="a"><button type="button" onClick="{{ a.go }}" style="min-height:32px;padding:0 12px;border:{{ a.bd }};border-radius:0;background:{{ a.bg }};color:{{ a.fg }};font-size:12px;font-weight:700;letter-spacing:0.4px;cursor:pointer;white-space:nowrap" style-hover="background:#F3EEF7;color:#3A2049">{{ a.t }}</button></sc-for><span style="flex-basis:100%;font-size:10px;letter-spacing:0.4px;color:#8E9A9B">{{ zipFoot }}</span></div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:640,&quot;height&quot;:420},&quot;value&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;object&quot;},&quot;onChange&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(v:object)=&gt;void&quot;},&quot;idPrefix&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;addr&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;label&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Business address&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showErrors&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;defaultCountry&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;US&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;previewData&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state={open:null,q:{},hi:0,touched:{},ready:!!window.SJAddr};
+  componentDidMount(){if(!window.SJAddr){this._w=setInterval(()=>{if(window.SJAddr){clearInterval(this._w);this.setState({ready:true});}},60);}}
+  componentWillUnmount(){clearInterval(this._w);clearTimeout(this._bt);}
+  val(){const A=window.SJAddr;const v=(this.props.onChange?this.props.value:this.state.local)||{};return {...A.blank(v.country_code||this.props.defaultCountry||'US'),...v};}
+  emit(p){const A=window.SJAddr;const v={...this.val(),...p};v.formatted_address=A.format(v);v.address_validation_status='unvalidated';v.address_validation_provider='';v.address_validation_timestamp='';if(this.props.onChange)this.props.onChange(v);else this.setState({local:v});}
+  setCountry(cc){const A=window.SJAddr;const v=this.val();if(cc===v.country_code){this.setState({open:null,q:{...this.state.q,country:undefined}});return;}
+    const drafts={...(v._drafts||{})};drafts[v.country_code]={administrative_area_code:v.administrative_area_code,administrative_area_name:v.administrative_area_name,postal_code:v.postal_code};
+    const back=drafts[cc]||{administrative_area_code:'',administrative_area_name:'',postal_code:A.meta(cc).postal?v.postal_code:''};
+    const m=A.meta(cc);const keepPostal=back.postal_code&&(!m.postalRe||m.postalRe.test(back.postal_code))?back.postal_code:(drafts[cc]?back.postal_code:'');
+    this.emit({country_code:cc,administrative_area_code:back.administrative_area_code||'',administrative_area_name:back.administrative_area_name||'',postal_code:m.postal?keepPostal:'',_drafts:drafts,_zipDismissed:''});
+    this.setState({open:null,q:{...this.state.q,country:undefined,area:undefined}});}
+  pickArea(a){this.emit({administrative_area_code:a.code,administrative_area_name:a.name});this.setState({open:null,q:{...this.state.q,area:undefined}});}
+  renderVals(){const A=window.SJAddr;if(!A)return {rows:[],zipOn:false,groupLabel:''};
+    const st=this.state,v=this.val(),m=A.meta(v.country_code),p=this.props.idPrefix||'addr',show=!!this.props.showErrors;const E=A.validate(v);
+    const err=k=>(show||st.touched[k])&&E[k]?E[k]:'';
+    const close=k=>{clearTimeout(this._bt);this._bt=setTimeout(()=>{if(this.state.open===k)this.setState({open:null,q:{...this.state.q,[k]:undefined},touched:{...this.state.touched,[k]:true}});else this.setState({touched:{...this.state.touched,[k]:true}});},120);};
+    const comboKey=(k,opts,pick)=>e=>{const o=this.state.open===k;if(e.key==='ArrowDown'){e.preventDefault();this.setState({open:k,hi:o?Math.min(opts.length-1,this.state.hi+1):0});}else if(e.key==='ArrowUp'){e.preventDefault();this.setState({hi:Math.max(0,this.state.hi-1)});}else if(e.key==='Enter'){if(o&&opts[this.state.hi]){e.preventDefault();pick(opts[this.state.hi]);}}else if(e.key==='Escape'){this.setState({open:null,q:{...this.state.q,[k]:undefined}});}else if(e.key==='Tab'&&o&&opts[this.state.hi]&&this.state.q[k]){pick(opts[this.state.hi]);}};
+    const optRows=(k,list,pick,subFn)=>list.map((x,i)=>{const on=st.open===k&&st.hi===i;return {id:p+'-'+k+'-o'+i,t:x.name,sub:subFn?subFn(x):x.code,selS:String(on),bg:on?'#F3EEF7':'#FFFFFF',edge:on?'#604073':'transparent',pick:e=>{e.preventDefault();pick(x);},hover:()=>{if(this.state.hi!==i)this.setState({hi:i});}};});
+    const rows=[];
+    // country
+    {const q=st.q.country;const TOP=['US','CA','GB','AE','IN','HK','IL','BE','TH','AU','MX','IT'];const list=q===undefined||q===''?[v.country_code,...TOP.filter(c=>c!==v.country_code)].map(c=>A.COUNTRIES.find(x=>x.code===c)).filter(Boolean):A.searchCountries(q);const L=list.slice(0,12);const pick=x=>this.setCountry(x.code);const open=st.open==='country';
+      rows.push({id:p+'-country',lbId:p+'-country-lb',label:'COUNTRY',opt:'',star:' *',col:'1 / -1',isCombo:true,role:'combobox',aac:'list',expS:String(open),ad:open&&L[st.hi]?p+'-country-o'+st.hi:'',im:'text',ac:'off',padR:'36px',
+        text:q!==undefined?q:A.countryName(v.country_code),ph:'Search country',bd:err('country')?'1.5px solid #A3354A':'1px solid #C3CFCC',invS:String(!!err('country')),
+        focus:e=>{try{e.target.select();}catch(x){}this.setState({open:'country',hi:Math.max(0,L.findIndex(c=>c.code===v.country_code))});},blur:()=>close('country'),
+        change:e=>this.setState({open:'country',hi:0,q:{...this.state.q,country:e.target.value}}),key:comboKey('country',L,pick),
+        open,opts:optRows('country',L,pick),empty:open&&!L.length,emptyT:'No countries match. Try the full name or a code like US.',hasFoot:open&&(q===undefined||q===''),foot:'Type to search all '+A.COUNTRIES.length+' countries',hasErr:!!err('country'),err:err('country'),hasNote:false,note:''});}
+    // line 1 with suggestions
+    {const sug=st.open==='l1'?A.streetSuggest(v.country_code,v.address_line_1):[];const pick=s=>{const a=(m.areaList||[]).find(x=>x.code===s.area);this.emit({address_line_1:s.l1,address_line_2:s.l2||v.address_line_2,locality:s.loc,administrative_area_code:a?a.code:'',administrative_area_name:a?a.name:'',postal_code:s.zip,_zipDismissed:s.zip});this.setState({open:null});};const open=sug.length>0;
+      rows.push({id:p+'-l1',lbId:p+'-l1-lb',label:m.l1,opt:'',star:' *',col:'1 / -1',isCombo:false,role:open?'combobox':null,aac:'list',expS:String(open),ad:open?p+'-l1-o'+st.hi:'',im:'text',ac:'address-line1',padR:'12px',
+        text:v.address_line_1,ph:m.l1Ph,bd:err('l1')?'1.5px solid #A3354A':'1px solid #C3CFCC',invS:String(!!err('l1')),
+        focus:()=>this.setState({open:'l1',hi:0}),blur:()=>close('l1'),change:e=>{this.emit({address_line_1:e.target.value});this.setState({open:'l1',hi:0});},key:comboKey('l1',sug,pick),
+        open,opts:sug.map((s,i)=>{const on=st.hi===i;return {id:p+'-l1-o'+i,t:s.l1+(s.l2?', '+s.l2:''),sub:s.loc+', '+s.area+' '+s.zip,selS:String(on),bg:on?'#F3EEF7':'#FFFFFF',edge:on?'#604073':'transparent',pick:e=>{e.preventDefault();pick(s);},hover:()=>{if(this.state.hi!==i)this.setState({hi:i});}};}),empty:false,emptyT:'',hasFoot:open,foot:'Preview suggestions · keep typing to enter it yourself',hasErr:!!err('l1'),err:err('l1'),hasNote:false,note:''});}
+    const txt=(k,key,label,ph,o)=>({id:p+'-'+k,lbId:'',label,opt:o.opt||'',star:o.req?' *':'',col:o.col||'auto',isCombo:false,role:null,aac:'none',expS:'false',ad:'',im:o.im||'text',ac:o.ac||'off',padR:'12px',text:v[key]||'',ph,bd:err(k)?'1.5px solid #A3354A':'1px solid #C3CFCC',invS:String(!!err(k)),
+      focus:()=>{},blur:()=>{const t=this.state.touched;let val=v[key]||'';if(o.fmt&&val){const f=o.fmt(val);if(f!==val)this.emit({[key]:f});}this.setState({touched:{...t,[k]:true}});},change:e=>this.emit({[key]:e.target.value,...(o.extra?o.extra(e.target.value):{})}),key:()=>{},
+      open:false,opts:[],empty:false,emptyT:'',hasFoot:false,foot:'',hasErr:!!err(k),err:err(k),hasNote:!!o.note,note:o.note||''});
+    if(m.l2!==false)rows.push(txt('l2','address_line_2',m.l2===true||!m.l2?'ADDRESS LINE 2':'ADDRESS LINE 2',m.l2Ph||'Apartment, suite or unit',{opt:' (OPTIONAL)',col:'1 / -1',ac:'address-line2',note:v.country_code==='AE'?m.poBoxNote:''}));
+    rows.push(txt('loc','locality',m.loc,m.locPh,{req:true,ac:'address-level2'}));
+    if(m.areaList){const q=st.q.area;const L=q===undefined||q===''?m.areaList:A.search(m.areaList,q);const pick=x=>this.pickArea(x);const open=st.open==='area';const sel=m.areaList.find(a=>a.code===v.administrative_area_code);
+      rows.push({id:p+'-area',lbId:p+'-area-lb',label:m.area,opt:m.areaReq?'':' (OPTIONAL)',star:m.areaReq?' *':'',col:'auto',isCombo:true,role:'combobox',aac:'list',expS:String(open),ad:open&&L[st.hi]?p+'-area-o'+st.hi:'',im:'text',ac:'off',padR:'36px',
+        text:q!==undefined?q:(sel?sel.name:''),ph:m.areaPh,bd:err('area')?'1.5px solid #A3354A':'1px solid #C3CFCC',invS:String(!!err('area')),
+        focus:e=>{try{e.target.select();}catch(x){}this.setState({open:'area',hi:Math.max(0,L.findIndex(a=>a.code===v.administrative_area_code))});},blur:()=>{const q2=this.state.q.area;if(q2){const hit=A.search(m.areaList,q2);if(hit.length&&A.norm(q2).length>=2&&(A.norm(hit[0].code)===A.norm(q2)||A.norm(hit[0].name).indexOf(A.norm(q2))===0||(hit[0].alias||[]).some(a=>a.indexOf(A.norm(q2))===0)))this.pickArea(hit[0]);}close('area');},
+        change:e=>{const t=e.target.value;if(v.administrative_area_code)this.emit({administrative_area_code:'',administrative_area_name:''});this.setState({open:'area',hi:0,q:{...this.state.q,area:t}});},key:comboKey('area',L,pick),
+        open,opts:optRows('area',L,pick),empty:open&&!L.length,emptyT:'No match. Pick from the list.',hasFoot:false,foot:'',hasErr:!!err('area'),err:err('area'),hasNote:false,note:''});}
+    else rows.push(txt('area','administrative_area_name',m.area,m.areaPh,{req:m.areaReq,opt:m.areaReq?'':' (OPTIONAL)',ac:'address-level1',extra:()=>({administrative_area_code:''})}));
+    if(m.postal)rows.push(txt('postal','postal_code',m.postal,m.postalPh,{req:m.postalReq,opt:m.postalReq?'':' (OPTIONAL)',im:m.postalIn||'text',ac:'postal-code',fmt:m.postalFmt}));
+    // ZIP helper (US only, preview data)
+    let zipOn=false,zipMsg='',zipActs=[],zipBg='#F5F8F8',zipBd='#D2E1E1',zipIc='#5D7F83',zipFoot='';
+    const look=A.zipLookup(v.country_code,v.postal_code);const z5=String(v.postal_code||'').slice(0,5);
+    if(look&&v._zipDismissed!==z5){zipFoot=this.props.previewData===false?'':'Preview ZIP data · a postal lookup service connects here';
+      if(!look.length){zipOn=true;zipMsg='We couldn\u2019t look up this ZIP code. Enter the city and state yourself.';}
+      else{const states=[...new Set(look.map(x=>x[1]))];const cities=look.map(x=>x[0]);const stOk=!v.administrative_area_code||states.includes(v.administrative_area_code);const cityOk=!v.locality||cities.some(c=>A.norm(c)===A.norm(v.locality));
+        const nm=c=>(m.areaList.find(a=>a.code===c)||{}).name||c;
+        const apply=(city,code)=>()=>{const a=m.areaList.find(x=>x.code===code);this.emit({locality:city,administrative_area_code:code,administrative_area_name:a?a.name:'',_zipDismissed:z5});};
+        const dismiss=()=>this.emit({_zipDismissed:z5});
+        if(!stOk){zipOn=true;zipBg='#FFF8EC';zipBd='#E8CFA0';zipIc='#8A5A00';zipMsg='This ZIP code is usually associated with '+nm(states[0])+'. Would you like to update the state?';zipActs=[{t:'Update to '+nm(states[0]),go:apply(v.locality&&cityOk?v.locality:cities[0],states[0]),bd:'1px solid #3A2049',bg:'#FFFFFF',fg:'#3A2049'},{t:'Keep '+(v.administrative_area_name||v.administrative_area_code),go:dismiss,bd:'1px solid #C3CFCC',bg:'#FFFFFF',fg:'#465E62'}];}
+        else if(!v.locality||!v.administrative_area_code||!cityOk){zipOn=true;zipMsg=look.length>1?'This ZIP code covers more than one city. Which one is yours?':'ZIP '+z5+' is '+cities[0]+', '+nm(states[0])+'.';zipActs=[...look.map(([c,s])=>({t:look.length>1?c:'Use '+c+', '+s,go:apply(c,s),bd:'1px solid #3A2049',bg:'#FFFFFF',fg:'#3A2049'})),{t:'Not now',go:dismiss,bd:'1px solid #C3CFCC',bg:'#FFFFFF',fg:'#465E62'}];}}}
+    return {rows,groupLabel:this.props.label||'Address',zipOn,zipMsg,zipActs,zipBg,zipBd,zipIc,zipFoot};}
+}
+</script>
+</body>
+</html>

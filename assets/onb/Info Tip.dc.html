@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<span style="position:relative;display:inline-flex;vertical-align:middle" onMouseEnter="{{ show }}" onMouseLeave="{{ hide }}">
+<button type="button" onClick="{{ toggle }}" onFocus="{{ show }}" onBlur="{{ hide }}" onKeyDown="{{ key }}" aria-label="{{ aria }}" aria-expanded="{{ openS }}" style="width:22px;height:22px;display:flex;align-items:center;justify-content:center;padding:0;border:0;background:none;color:#5D7F83;cursor:pointer" style-hover="color:#3A2049"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"></circle><path d="M12 11v6"></path><path d="M12 7.6v.1"></path></svg></button>
+<sc-if value="{{ open }}" hint-placeholder-val="{{ false }}"><span role="tooltip" style="position:absolute;z-index:60;top:26px;left:{{ left }};width:min(272px,78vw);padding:10px 12px;background:#FFFFFF;border:1px solid #C3CFCC;box-shadow:0 6px 20px rgba(38,29,61,0.12);font-size:12.5px;line-height:18px;font-weight:400;letter-spacing:0;text-transform:none;color:#2F4243;text-align:left;white-space:normal;animation:sjTipIn 160ms cubic-bezier(.2,.8,.2,1)">{{ text }}</span></sc-if>
+</span>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:320,&quot;height&quot;:140},&quot;text&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;The name registered on your business's official documents.&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;label&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Legal business name&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;align&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;left&quot;,&quot;right&quot;],&quot;default&quot;:&quot;left&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state={open:false};
+  componentDidMount(){if(!document.getElementById('sj-tip-kf')){const s=document.createElement('style');s.id='sj-tip-kf';s.textContent='@keyframes sjTipIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}';document.head.appendChild(s);}}
+  renderVals(){const o=this.state.open;
+    return {open:o,openS:String(o),text:this.props.text||'',aria:'More about '+(this.props.label||'this field'),left:this.props.align==='right'?'auto':'-8px',
+      show:()=>this.setState({open:true}),hide:()=>this.setState({open:false}),toggle:()=>this.setState({open:!o}),key:e=>{if(e.key==='Escape')this.setState({open:false});}};}
+}
+</script>
+</body>
+</html>

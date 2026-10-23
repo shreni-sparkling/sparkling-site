@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@keyframes sjScene{0%{opacity:0}4%,92%{opacity:1}98%,100%{opacity:0}}
+@keyframes sjFlapClose{0%,12%{transform:scaleY(1)}24%,100%{transform:scaleY(0)}}
+@keyframes sjFlapOpen{0%,24%{transform:scaleY(0)}36%,100%{transform:scaleY(1)}}
+@keyframes sjCardUp{0%,34%{transform:translateY(0)}54%,100%{transform:translateY(-80px)}}
+@keyframes sjLine{0%,56%{stroke-dashoffset:92}70%,100%{stroke-dashoffset:0}}
+@keyframes sjTick{0%,62%{transform:scale(0)}70%{transform:scale(1.3)}76%,100%{transform:scale(1)}}
+@keyframes sjTw{0%,60%{opacity:0;transform:scale(.2) rotate(0deg)}72%{opacity:1;transform:scale(1.1) rotate(45deg)}86%{opacity:1;transform:scale(.85) rotate(70deg)}96%,100%{opacity:0;transform:scale(.2) rotate(90deg)}}
+@keyframes sjTwAll{0%,100%{opacity:.25;transform:scale(.5) rotate(0deg)}50%{opacity:1;transform:scale(1.1) rotate(45deg)}}
+@keyframes sjScan{0%,100%{transform:translate(0px,0px)}25%{transform:translate(72px,18px)}50%{transform:translate(0px,36px)}75%{transform:translate(72px,54px)}}
+@keyframes sjHi{0%,100%{opacity:.15}50%{opacity:.6}}
+@keyframes sjStamp{0%,14%{opacity:0;transform:scale(1.9) rotate(-25deg)}30%{opacity:1;transform:scale(.9) rotate(5deg)}37%{transform:scale(1.05) rotate(-1deg)}43%,100%{opacity:1;transform:scale(1) rotate(0deg)}}
+@keyframes sjCheck{0%,42%{stroke-dashoffset:60}56%,100%{stroke-dashoffset:0}}
+@keyframes sjBurst{0%,40%{opacity:0;transform:translateX(0px) scale(.3)}50%{opacity:1}72%,100%{opacity:0;transform:translateX(58px) scale(1)}}
+@keyframes sjTicketIn{0%,8%{transform:translateX(300px) rotate(8deg)}28%{transform:translateX(-8px) rotate(-2deg)}34%,100%{transform:translateX(0px) rotate(0deg)}}
+@keyframes sjType{0%,36%{transform:scaleX(1)}60%,100%{transform:scaleX(0)}}
+@keyframes sjRing{0%,62%,100%{transform:rotate(0deg)}65%{transform:rotate(-16deg)}68%{transform:rotate(14deg)}71%{transform:rotate(-12deg)}74%{transform:rotate(10deg)}77%{transform:rotate(0deg)}}
+@keyframes sjArc{0%,62%{opacity:0}68%,80%{opacity:1}88%,100%{opacity:0}}
+@keyframes sjFade{0%{opacity:0}4%,92%{opacity:1}98%,100%{opacity:0}}
+@keyframes sgL1{0%,10%{stroke-dashoffset:100}20%,100%{stroke-dashoffset:0}}
+@keyframes sgC1{0%,21%{transform:scale(0)}24%{transform:scale(1.25)}26%,100%{transform:scale(1)}}
+@keyframes sgL2{0%,26%{stroke-dashoffset:100}36%,100%{stroke-dashoffset:0}}
+@keyframes sgC2{0%,37%{transform:scale(0)}40%{transform:scale(1.25)}42%,100%{transform:scale(1)}}
+@keyframes sgL3{0%,42%{stroke-dashoffset:100}52%,100%{stroke-dashoffset:0}}
+@keyframes sgC3{0%,53%{transform:scale(0)}56%{transform:scale(1.25)}58%,100%{transform:scale(1)}}
+@keyframes sgSig{0%,60%{stroke-dashoffset:120}72%,100%{stroke-dashoffset:0}}
+@keyframes sgPen{0%,6%{transform:translate(262px,206px)}10%{transform:translate(110px,74px)}20%{transform:translate(200px,74px)}23%{transform:translate(98px,76px)}26%{transform:translate(110px,100px)}36%{transform:translate(210px,100px)}39%{transform:translate(98px,102px)}42%{transform:translate(110px,126px)}52%{transform:translate(190px,126px)}55%{transform:translate(98px,128px)}60%{transform:translate(112px,172px)}66%{transform:translate(142px,168px)}72%{transform:translate(172px,170px)}80%,100%{transform:translate(268px,30px)}}
+@keyframes sgReady{0%,78%{opacity:0;transform:translateY(4px)}84%,100%{opacity:1;transform:none}}
+@keyframes sgTw1{0%,76%{opacity:0;transform:scale(.2) rotate(0deg)}82%{opacity:1;transform:scale(1.15) rotate(45deg)}88%{opacity:1;transform:scale(.85) rotate(70deg)}94%,100%{opacity:0;transform:scale(.2) rotate(90deg)}}
+@keyframes sgTw2{0%,79%{opacity:0;transform:scale(.2) rotate(0deg)}85%{opacity:1;transform:scale(1.15) rotate(45deg)}91%{opacity:1;transform:scale(.85) rotate(70deg)}97%,100%{opacity:0;transform:scale(.2) rotate(90deg)}}
+@keyframes sgTw3{0%,82%{opacity:0;transform:scale(.2) rotate(0deg)}88%{opacity:1;transform:scale(1.15) rotate(45deg)}94%{opacity:1;transform:scale(.85) rotate(70deg)}97%,100%{opacity:0;transform:scale(.2) rotate(90deg)}}
+@keyframes dvForm{0%,14%{transform:translateY(-92px) scaleY(1)}30%{transform:translateY(-30px) scaleY(.62)}40%,100%{transform:translateY(0px) scaleY(.62)}}
+@keyframes dvFold{0%,14%{opacity:0}24%,100%{opacity:1}}
+@keyframes dvOpen{0%,42%{transform:scaleY(1)}50%,100%{transform:scaleY(0)}}
+@keyframes dvShut{0%,48%{transform:scaleY(0)}56%,100%{transform:scaleY(1)}}
+@keyframes dvAway{0%,68%{transform:translate(0px,0px) rotate(0deg);opacity:1}76%{transform:translate(-10px,4px) rotate(1deg);opacity:1}92%,100%{transform:translate(300px,-70px) rotate(-10deg);opacity:0}}
+@keyframes dvTw1{0%,56%{opacity:0;transform:scale(.2) rotate(0deg)}62%{opacity:1;transform:scale(1.15) rotate(45deg)}68%{opacity:1;transform:scale(.85) rotate(70deg)}74%,100%{opacity:0;transform:scale(.2) rotate(90deg)}}
+@keyframes dvTw2{0%,60%{opacity:0;transform:scale(.2) rotate(0deg)}66%{opacity:1;transform:scale(1.15) rotate(45deg)}72%{opacity:1;transform:scale(.85) rotate(70deg)}78%,100%{opacity:0;transform:scale(.2) rotate(90deg)}}
+@keyframes cdCard{0%,4%{transform:translateX(300px) rotate(6deg)}20%{transform:translateX(-8px) rotate(-1.5deg)}26%,100%{transform:translateX(0px) rotate(0deg)}}
+@keyframes cdD0{0%,30%{transform:scale(0)}33%{transform:scale(1.25)}35%,100%{transform:scale(1)}}
+@keyframes cdD1{0%,37%{transform:scale(0)}40%{transform:scale(1.25)}42%,100%{transform:scale(1)}}
+@keyframes cdD2{0%,44%{transform:scale(0)}47%{transform:scale(1.25)}49%,100%{transform:scale(1)}}
+@keyframes cdD3{0%,51%{transform:scale(0)}54%{transform:scale(1.25)}56%,100%{transform:scale(1)}}
+@keyframes cdD4{0%,58%{transform:scale(0)}61%{transform:scale(1.25)}63%,100%{transform:scale(1)}}
+@keyframes cdD5{0%,65%{transform:scale(0)}68%{transform:scale(1.25)}70%,100%{transform:scale(1)}}
+@keyframes cdOk{0%,74%{opacity:0}80%,100%{opacity:1}}
+@keyframes cdTw1{0%,76%{opacity:0;transform:scale(.2) rotate(0deg)}82%{opacity:1;transform:scale(1.15) rotate(45deg)}88%{opacity:1;transform:scale(.85) rotate(70deg)}94%,100%{opacity:0;transform:scale(.2) rotate(90deg)}}
+@keyframes cdTw2{0%,80%{opacity:0;transform:scale(.2) rotate(0deg)}86%{opacity:1;transform:scale(1.15) rotate(45deg)}92%{opacity:1;transform:scale(.85) rotate(70deg)}97%,100%{opacity:0;transform:scale(.2) rotate(90deg)}}
+@media (prefers-reduced-motion: reduce){svg *{animation-duration:0s!important;animation-delay:0s!important;animation-iteration-count:1!important;animation-fill-mode:forwards!important}}
+</style>
+</helmet>
+<div style="width:100%;height:100%;background:{{ bg }};display:flex;align-items:center;justify-content:center;overflow:hidden">
+
+<sc-if value="{{ isEnv }}" hint-placeholder-val="{{ true }}"><svg viewBox="0 0 320 240" role="img" aria-label="Envelope opens and a KYC form rises out with three checks" style="width:100%;height:100%;display:block">
+<g style="animation:sjScene 5s linear infinite">
+<rect x="60" y="110" width="200" height="110" fill="#534462"></rect>
+<polygon points="60,110 260,110 160,46" fill="#6E5384" style="transform-box:view-box;transform-origin:160px 110px;animation:sjFlapOpen 5s cubic-bezier(.2,.8,.2,1) infinite"></polygon>
+<g style="animation:sjCardUp 5s cubic-bezier(.2,.8,.2,1) infinite">
+<rect x="80" y="116" width="160" height="112" fill="#FFFFFF"></rect>
+<rect x="80" y="116" width="160" height="20" fill="#DCD0E8"></rect>
+<text x="92" y="130" font-family="Open Sauce Sans, Arial, sans-serif" font-size="9" font-weight="800" letter-spacing="1.8" fill="#3A2049">KYC FORM</text>
+<circle cx="96" cy="152" r="6" fill="none" stroke="#604073" stroke-width="1.6"></circle>
+<circle cx="96" cy="170" r="6" fill="none" stroke="#604073" stroke-width="1.6"></circle>
+<circle cx="96" cy="188" r="6" fill="none" stroke="#604073" stroke-width="1.6"></circle>
+<path d="M93 152.3l2.2 2.2 4-4.4" fill="none" stroke="#604073" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform-box:fill-box;transform-origin:center;animation:sjTick 5s ease-out infinite"></path>
+<path d="M93 170.3l2.2 2.2 4-4.4" fill="none" stroke="#604073" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform-box:fill-box;transform-origin:center;animation:sjTick 5s ease-out .2s infinite"></path>
+<path d="M93 188.3l2.2 2.2 4-4.4" fill="none" stroke="#604073" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform-box:fill-box;transform-origin:center;animation:sjTick 5s ease-out .4s infinite"></path>
+<line x1="110" y1="152" x2="202" y2="152" stroke="#CFC6D8" stroke-width="5" stroke-linecap="round" stroke-dasharray="92" style="animation:sjLine 5s ease-out infinite"></line>
+<line x1="110" y1="170" x2="190" y2="170" stroke="#CFC6D8" stroke-width="5" stroke-linecap="round" stroke-dasharray="92" style="animation:sjLine 5s ease-out .2s infinite"></line>
+<line x1="110" y1="188" x2="210" y2="188" stroke="#CFC6D8" stroke-width="5" stroke-linecap="round" stroke-dasharray="92" style="animation:sjLine 5s ease-out .4s infinite"></line>
+</g>
+<polygon points="60,110 160,172 60,220" fill="#5E4670"></polygon>
+<polygon points="260,110 160,172 260,220" fill="#5E4670"></polygon>
+<polygon points="60,220 160,156 260,220" fill="#654D78"></polygon>
+<image href="assets/sparkling-logo-primary-white.svg" x="168" y="188" width="82" height="24" preserveAspectRatio="xMaxYMid meet"></image>
+<polygon points="60,110 260,110 160,176" fill="#765B88" style="transform-box:view-box;transform-origin:160px 110px;animation:sjFlapClose 5s cubic-bezier(.2,.8,.2,1) infinite"></polygon>
+<g transform="translate(62 54)"><path d="M0 -12C1.4 -2.4 2.4 -1.4 12 0C2.4 1.4 1.4 2.4 0 12C-1.4 2.4 -2.4 1.4 -12 0C-2.4 -1.4 -1.4 -2.4 0 -12Z" fill="#604073" style="transform-box:fill-box;transform-origin:center;animation:sjTw 5s ease-in-out infinite"></path></g>
+<g transform="translate(262 40)"><path d="M0 -9C1 -1.8 1.8 -1 9 0C1.8 1 1 1.8 0 9C-1 1.8 -1.8 1 -9 0C-1.8 -1 -1 -1.8 0 -9Z" fill="#9C84B0" style="transform-box:fill-box;transform-origin:center;animation:sjTw 5s ease-in-out .25s infinite"></path></g>
+<g transform="translate(248 96)"><path d="M0 -14C1.6 -2.8 2.8 -1.6 14 0C2.8 1.6 1.6 2.8 0 14C-1.6 2.8 -2.8 1.6 -14 0C-2.8 -1.6 -1.6 -2.8 0 -14Z" fill="#604073" style="transform-box:fill-box;transform-origin:center;animation:sjTw 5s ease-in-out .45s infinite"></path></g>
+<g transform="translate(84 22)"><path d="M0 -7C.8 -1.4 1.4 -.8 7 0C1.4 .8 .8 1.4 0 7C-.8 1.4 -1.4 .8 -7 0C-1.4 -.8 -.8 -1.4 0 -7Z" fill="#9C84B0" style="transform-box:fill-box;transform-origin:center;animation:sjTw 5s ease-in-out .6s infinite"></path></g>
+</g>
+</svg></sc-if>
+
+<sc-if value="{{ isReview }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 320 240" role="img" aria-label="A magnifying glass reviews a KYC form" style="width:100%;height:100%;display:block">
+<rect x="90" y="24" width="140" height="168" fill="#FFFFFF" stroke="#DCD0E8" stroke-width="1.5"></rect>
+<rect x="90" y="24" width="140" height="20" fill="#DCD0E8"></rect>
+<text x="102" y="38" font-family="Open Sauce Sans, Arial, sans-serif" font-size="9" font-weight="800" letter-spacing="1.8" fill="#3A2049">KYC FORM</text>
+<line x1="106" y1="70" x2="200" y2="70" stroke="#CFC6D8" stroke-width="5" stroke-linecap="round"></line>
+<line x1="106" y1="88" x2="214" y2="88" stroke="#CFC6D8" stroke-width="5" stroke-linecap="round"></line>
+<line x1="106" y1="106" x2="190" y2="106" stroke="#CFC6D8" stroke-width="5" stroke-linecap="round"></line>
+<line x1="106" y1="124" x2="208" y2="124" stroke="#CFC6D8" stroke-width="5" stroke-linecap="round"></line>
+<line x1="106" y1="142" x2="176" y2="142" stroke="#CFC6D8" stroke-width="5" stroke-linecap="round"></line>
+<path d="M106 168h40" stroke="#604073" stroke-width="1.5" stroke-linecap="round"></path>
+<path d="M150 166c4-6 6 4 10-2s5 3 9-1" fill="none" stroke="#604073" stroke-width="1.5" stroke-linecap="round"></path>
+<g style="animation:sjScan 5s ease-in-out infinite">
+<circle cx="126" cy="76" r="17" fill="#DCD0E8" style="animation:sjHi 1.25s ease-in-out infinite"></circle>
+<circle cx="126" cy="76" r="17" fill="none" stroke="#604073" stroke-width="4"></circle>
+<line x1="138" y1="88" x2="152" y2="102" stroke="#604073" stroke-width="6" stroke-linecap="round"></line>
+</g>
+<rect x="100" y="204" width="120" height="24" fill="#3A2049"></rect>
+<text x="160" y="220" text-anchor="middle" font-family="Open Sauce Sans, Arial, sans-serif" font-size="9" font-weight="800" letter-spacing="1.8" fill="#FFFFFF">UNDER REVIEW</text>
+<g transform="translate(262 60)"><path d="M0 -11C1.3 -2.2 2.2 -1.3 11 0C2.2 1.3 1.3 2.2 0 11C-1.3 2.2 -2.2 1.3 -11 0C-2.2 -1.3 -1.3 -2.2 0 -11Z" fill="#604073" style="transform-box:fill-box;transform-origin:center;animation:sjTwAll 2.5s ease-in-out infinite"></path></g>
+<g transform="translate(62 150)"><path d="M0 -8C1 -1.6 1.6 -1 8 0C1.6 1 1 1.6 0 8C-1 1.6 -1.6 1 -8 0C-1.6 -1 -1 -1.6 0 -8Z" fill="#9C84B0" style="transform-box:fill-box;transform-origin:center;animation:sjTwAll 2.5s ease-in-out 1.2s infinite"></path></g>
+</svg></sc-if>
+
+<sc-if value="{{ isApproved }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 320 240" role="img" aria-label="An approval seal stamps onto the form with a sparkle burst" style="width:100%;height:100%;display:block">
+<g style="animation:sjScene 5s linear infinite">
+<rect x="84" y="24" width="140" height="172" fill="#FFFFFF" stroke="#DCD0E8" stroke-width="1.5"></rect>
+<rect x="84" y="24" width="140" height="20" fill="#DCD0E8"></rect>
+<text x="96" y="38" font-family="Open Sauce Sans, Arial, sans-serif" font-size="9" font-weight="800" letter-spacing="1.8" fill="#3A2049">WHOLESALE ACCOUNT</text>
+<line x1="100" y1="70" x2="194" y2="70" stroke="#CFC6D8" stroke-width="5" stroke-linecap="round"></line>
+<line x1="100" y1="88" x2="208" y2="88" stroke="#CFC6D8" stroke-width="5" stroke-linecap="round"></line>
+<line x1="100" y1="106" x2="170" y2="106" stroke="#CFC6D8" stroke-width="5" stroke-linecap="round"></line>
+<g transform="translate(212 162) rotate(0)"><path d="M0 -6C.7 -1.2 1.2 -.7 6 0C1.2 .7 .7 1.2 0 6C-.7 1.2 -1.2 .7 -6 0C-1.2 -.7 -.7 -1.2 0 -6Z" fill="#604073" style="transform-box:fill-box;transform-origin:center;animation:sjBurst 5s ease-out infinite"></path></g>
+<g transform="translate(212 162) rotate(60)"><path d="M0 -5C.6 -1 1 -.6 5 0C1 .6 .6 1 0 5C-.6 1 -1 .6 -5 0C-1 -.6 -.6 -1 0 -5Z" fill="#9C84B0" style="transform-box:fill-box;transform-origin:center;animation:sjBurst 5s ease-out infinite"></path></g>
+<g transform="translate(212 162) rotate(120)"><path d="M0 -7C.8 -1.4 1.4 -.8 7 0C1.4 .8 .8 1.4 0 7C-.8 1.4 -1.4 .8 -7 0C-1.4 -.8 -.8 -1.4 0 -7Z" fill="#604073" style="transform-box:fill-box;transform-origin:center;animation:sjBurst 5s ease-out infinite"></path></g>
+<g transform="translate(212 162) rotate(180)"><path d="M0 -5C.6 -1 1 -.6 5 0C1 .6 .6 1 0 5C-.6 1 -1 .6 -5 0C-1 -.6 -.6 -1 0 -5Z" fill="#9C84B0" style="transform-box:fill-box;transform-origin:center;animation:sjBurst 5s ease-out infinite"></path></g>
+<g transform="translate(212 162) rotate(240)"><path d="M0 -7C.8 -1.4 1.4 -.8 7 0C1.4 .8 .8 1.4 0 7C-.8 1.4 -1.4 .8 -7 0C-1.4 -.8 -.8 -1.4 0 -7Z" fill="#604073" style="transform-box:fill-box;transform-origin:center;animation:sjBurst 5s ease-out infinite"></path></g>
+<g transform="translate(212 162) rotate(300)"><path d="M0 -5C.6 -1 1 -.6 5 0C1 .6 .6 1 0 5C-.6 1 -1 .6 -5 0C-1 -.6 -.6 -1 0 -5Z" fill="#9C84B0" style="transform-box:fill-box;transform-origin:center;animation:sjBurst 5s ease-out infinite"></path></g>
+<g style="transform-box:view-box;transform-origin:212px 162px;animation:sjStamp 5s cubic-bezier(.2,.8,.2,1) infinite">
+<circle cx="212" cy="162" r="38" fill="#604073"></circle>
+<circle cx="212" cy="162" r="31" fill="none" stroke="#DCD0E8" stroke-width="1.2" stroke-dasharray="3 3"></circle>
+<path d="M197 163l10 10 19-21" fill="none" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="60" style="animation:sjCheck 5s ease-out infinite"></path>
+</g>
+<text x="154" y="226" text-anchor="middle" font-family="Open Sauce Sans, Arial, sans-serif" font-size="11" font-weight="800" letter-spacing="2.6" fill="#3A2049">APPROVED</text>
+</g>
+</svg></sc-if>
+
+<sc-if value="{{ isTicket }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 320 240" role="img" aria-label="A numbered verification request ticket slides in" style="width:100%;height:100%;display:block">
+<g style="animation:sjScene 5s linear infinite">
+<g style="transform-box:view-box;transform-origin:160px 128px;animation:sjTicketIn 5s cubic-bezier(.2,.8,.2,1) infinite">
+<path d="M44 82H116A10 10 0 0 0 136 82H276V174H136A10 10 0 0 0 116 174H44Z" fill="#FFFFFF" stroke="#604073" stroke-width="2"></path>
+<line x1="126" y1="94" x2="126" y2="162" stroke="#BAAEC6" stroke-width="1.5" stroke-dasharray="4 4"></line>
+<path d="M80 108C81.6 121 83 122.4 96 124C83 125.6 81.6 127 80 140C78.4 127 77 125.6 64 124C77 122.4 78.4 121 80 108Z" fill="#604073"></path>
+<text x="146" y="106" font-family="Open Sauce Sans, Arial, sans-serif" font-size="8.5" font-weight="800" letter-spacing="1.8" fill="#5D7F83">VERIFICATION REQUEST</text>
+<text x="146" y="142" font-family="Open Sauce Sans, Arial, sans-serif" font-size="28" font-weight="800" fill="#3A2049">VR-1042</text>
+<rect x="144" y="114" width="126" height="36" fill="#FFFFFF" style="transform-box:fill-box;transform-origin:right center;animation:sjType 5s steps(7,end) infinite"></rect>
+<text x="146" y="162" font-family="Open Sauce Sans, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#434345">Quote this number when you call</text>
+</g>
+<g transform="translate(262 42)">
+<circle r="18" fill="#DCD0E8"></circle>
+<g style="transform-box:fill-box;transform-origin:center;animation:sjRing 5s ease-in-out infinite"><path d="M-7 -8c1-1 2.6-1 3.4.2l2 3c.6 1 .3 2.2-.6 2.8l-1.2.8c1 2.4 2.8 4.2 5.2 5.2l.8-1.2c.6-.9 1.8-1.2 2.8-.6l3 2c1.2.8 1.2 2.4.2 3.4l-1.4 1.4c-1.6 1.6-4 2-6 1C-4 18-9.6 12.4-12.6 6.2c-1-2-.6-4.4 1-6Z" fill="#604073" transform="translate(2.5 -2.5) scale(.8)"></path></g>
+<path d="M20 -14a22 22 0 0 1 6 12" fill="none" stroke="#604073" stroke-width="2" stroke-linecap="round" style="animation:sjArc 5s ease-in-out infinite"></path>
+<path d="M-20 14a22 22 0 0 1-6-12" fill="none" stroke="#604073" stroke-width="2" stroke-linecap="round" style="animation:sjArc 5s ease-in-out infinite"></path>
+</g>
+</g>
+</svg></sc-if>
+
+<sc-if value="{{ isSign }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 320 240" role="img" aria-label="A purple pen fills in a blank KYC form and signs it, then a sparkle appears" style="width:100%;height:100%;display:block">
+<g style="animation:sjFade 6s linear infinite">
+<rect x="84" y="28" width="152" height="184" fill="#FFFFFF" stroke="#DCD0E8" stroke-width="1.5"></rect>
+<rect x="84" y="28" width="152" height="22" fill="#DCD0E8"></rect>
+<text x="96" y="43" font-family="Open Sauce Sans, Arial, sans-serif" font-size="9" font-weight="800" letter-spacing="1.8" fill="#3A2049">KYC FORM</text>
+<circle cx="98" cy="74" r="6" fill="none" stroke="#BAAEC6" stroke-width="1.4"></circle><line x1="110" y1="74" x2="200" y2="74" stroke="#EEF1F1" stroke-width="5" stroke-linecap="round"></line><line x1="110" y1="74" x2="200" y2="74" stroke="#9C84B0" stroke-width="2" stroke-linecap="round" stroke-dasharray="100" style="animation:sgL1 6s ease-out infinite"></line><path d="M95 74.3l2.2 2.2 4-4.4" fill="none" stroke="#604073" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="transform-box:fill-box;transform-origin:center;animation:sgC1 6s ease-out infinite"></path>
+<circle cx="98" cy="100" r="6" fill="none" stroke="#BAAEC6" stroke-width="1.4"></circle><line x1="110" y1="100" x2="210" y2="100" stroke="#EEF1F1" stroke-width="5" stroke-linecap="round"></line><line x1="110" y1="100" x2="210" y2="100" stroke="#9C84B0" stroke-width="2" stroke-linecap="round" stroke-dasharray="100" style="animation:sgL2 6s ease-out infinite"></line><path d="M95 100.3l2.2 2.2 4-4.4" fill="none" stroke="#604073" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="transform-box:fill-box;transform-origin:center;animation:sgC2 6s ease-out infinite"></path>
+<circle cx="98" cy="126" r="6" fill="none" stroke="#BAAEC6" stroke-width="1.4"></circle><line x1="110" y1="126" x2="190" y2="126" stroke="#EEF1F1" stroke-width="5" stroke-linecap="round"></line><line x1="110" y1="126" x2="190" y2="126" stroke="#9C84B0" stroke-width="2" stroke-linecap="round" stroke-dasharray="100" style="animation:sgL3 6s ease-out infinite"></line><path d="M95 126.3l2.2 2.2 4-4.4" fill="none" stroke="#604073" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="transform-box:fill-box;transform-origin:center;animation:sgC3 6s ease-out infinite"></path>
+<text x="98" y="160" font-family="Open Sauce Sans, Arial, sans-serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="#8E9A9B">SIGNATURE</text>
+<line x1="98" y1="182" x2="222" y2="182" stroke="#C3CFCC" stroke-width="1"></line>
+<path d="M112 172c6-10 9 8 14 0s7-9 9 2 6-4 10-3 6 8 10 2 8-5 17-3" fill="none" stroke="#3A2049" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="120" style="animation:sgSig 6s ease-in-out infinite"></path>
+<g style="animation:sgReady 6s ease-out infinite"><rect x="168" y="192" width="58" height="14" fill="#3A2049"></rect><text x="197" y="202" text-anchor="middle" font-family="Open Sauce Sans, Arial, sans-serif" font-size="7" font-weight="800" letter-spacing="1.4" fill="#FFFFFF">READY</text></g>
+<g style="animation:sgPen 6s cubic-bezier(.45,.05,.35,1) infinite"><g transform="rotate(32)"><polygon points="-2.6,-9 2.6,-9 0,0" fill="#604073"></polygon><rect x="-3" y="-44" width="6" height="35" fill="#3A2049"></rect><rect x="-3" y="-17" width="6" height="3" fill="#9C84B0"></rect><rect x="-3.4" y="-50" width="6.8" height="7" fill="#604073"></rect></g></g>
+<g transform="translate(244 34)"><path d="M0 -13C1.6 -2.6 2.6 -1.6 13 0C2.6 1.6 1.6 2.6 0 13C-1.6 2.6 -2.6 1.6 -13 0C-2.6 -1.6 -1.6 -2.6 0 -13Z" fill="#604073" style="transform-box:fill-box;transform-origin:center;animation:sgTw1 6s ease-in-out infinite"></path></g>
+<g transform="translate(266 62)"><path d="M0 -8C1.0 -1.6 1.6 -1.0 8 0C1.6 1.0 1.0 1.6 0 8C-1.0 1.6 -1.6 1.0 -8 0C-1.6 -1.0 -1.0 -1.6 0 -8Z" fill="#9C84B0" style="transform-box:fill-box;transform-origin:center;animation:sgTw2 6s ease-in-out infinite"></path></g>
+<g transform="translate(72 58)"><path d="M0 -7C0.8 -1.4 1.4 -0.8 7 0C1.4 0.8 0.8 1.4 0 7C-0.8 1.4 -1.4 0.8 -7 0C-1.4 -0.8 -0.8 -1.4 0 -7Z" fill="#9C84B0" style="transform-box:fill-box;transform-origin:center;animation:sgTw3 6s ease-in-out infinite"></path></g>
+</g>
+</svg></sc-if>
+
+<sc-if value="{{ isDeliver }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 320 240" role="img" aria-label="The completed KYC form folds into the purple envelope, it seals with a sparkle and glides away" style="width:100%;height:100%;display:block">
+<g style="animation:sjFade 6s linear infinite"><g style="transform-box:view-box;transform-origin:160px 160px;animation:dvAway 6s cubic-bezier(.5,0,.3,1) infinite">
+<rect x="60" y="110" width="200" height="110" fill="#534462"></rect>
+<polygon points="60,110 260,110 160,46" fill="#6E5384" style="transform-box:view-box;transform-origin:160px 110px;animation:dvOpen 6s cubic-bezier(.2,.8,.2,1) infinite"></polygon>
+<g style="transform-box:view-box;transform-origin:160px 214px;animation:dvForm 6s cubic-bezier(.2,.8,.2,1) infinite">
+<rect x="84" y="114" width="152" height="100" fill="#FFFFFF"></rect>
+<rect x="84" y="114" width="152" height="18" fill="#DCD0E8"></rect>
+<text x="96" y="126.5" font-family="Open Sauce Sans, Arial, sans-serif" font-size="8.5" font-weight="800" letter-spacing="1.8" fill="#3A2049">KYC FORM</text>
+<circle cx="98" cy="146" r="5.5" fill="#604073"></circle><path d="M95.5 146.3l1.9 1.9 3.4-3.8" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><line x1="110" y1="146" x2="200" y2="146" stroke="#9C84B0" stroke-width="2" stroke-linecap="round"></line><circle cx="98" cy="164" r="5.5" fill="#604073"></circle><path d="M95.5 164.3l1.9 1.9 3.4-3.8" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><line x1="110" y1="164" x2="210" y2="164" stroke="#9C84B0" stroke-width="2" stroke-linecap="round"></line><circle cx="98" cy="182" r="5.5" fill="#604073"></circle><path d="M95.5 182.3l1.9 1.9 3.4-3.8" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><line x1="110" y1="182" x2="190" y2="182" stroke="#9C84B0" stroke-width="2" stroke-linecap="round"></line>
+<path d="M112 204c6-9 9 7 14 0s7-8 9 2 6-4 10-3 6 7 10 2 8-5 17-3" fill="none" stroke="#3A2049" stroke-width="1.6" stroke-linecap="round"></path>
+<line x1="84" y1="164" x2="236" y2="164" stroke="#BAAEC6" stroke-width="1" stroke-dasharray="3 3" style="animation:dvFold 6s ease-out infinite"></line>
+</g>
+<polygon points="60,110 160,172 60,220" fill="#5E4670"></polygon>
+<polygon points="260,110 160,172 260,220" fill="#5E4670"></polygon>
+<polygon points="60,220 160,156 260,220" fill="#654D78"></polygon>
+<image href="assets/sparkling-logo-primary-white.svg" x="168" y="188" width="82" height="24" preserveAspectRatio="xMaxYMid meet"></image>
+<polygon points="60,110 260,110 160,176" fill="#765B88" style="transform-box:view-box;transform-origin:160px 110px;animation:dvShut 6s cubic-bezier(.2,.8,.2,1) infinite"></polygon>
+<g transform="translate(160 170)"><path d="M0 -12C1.4 -2.4 2.4 -1.4 12 0C2.4 1.4 1.4 2.4 0 12C-1.4 2.4 -2.4 1.4 -12 0C-2.4 -1.4 -1.4 -2.4 0 -12Z" fill="#FFFFFF" style="transform-box:fill-box;transform-origin:center;animation:dvTw1 6s ease-in-out infinite"></path></g>
+<g transform="translate(250 96)"><path d="M0 -9C1.1 -1.8 1.8 -1.1 9 0C1.8 1.1 1.1 1.8 0 9C-1.1 1.8 -1.8 1.1 -9 0C-1.8 -1.1 -1.1 -1.8 0 -9Z" fill="#604073" style="transform-box:fill-box;transform-origin:center;animation:dvTw2 6s ease-in-out infinite"></path></g>
+</g></g>
+</svg></sc-if>
+
+<sc-if value="{{ isCode }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 320 240" role="img" aria-label="A Sparkling card slides in and six code circles fill one by one, then a sparkle appears" style="width:100%;height:100%;display:block">
+<g style="animation:sjFade 6s linear infinite">
+<g style="transform-box:view-box;transform-origin:160px 120px;animation:cdCard 6s cubic-bezier(.2,.8,.2,1) infinite">
+<rect x="56" y="58" width="208" height="128" fill="#FFFFFF" stroke="#DCD0E8" stroke-width="1.5"></rect>
+<rect x="56" y="58" width="208" height="32" fill="#3A2049"></rect>
+<image href="assets/sparkling-logo-primary-white.svg" x="68" y="64" width="84" height="20" preserveAspectRatio="xMinYMid meet"></image>
+<text x="252" y="78" text-anchor="end" font-family="Open Sauce Sans, Arial, sans-serif" font-size="7" font-weight="800" letter-spacing="1.4" fill="#DCD0E8">VERIFY</text>
+<text x="160" y="114" text-anchor="middle" font-family="Open Sauce Sans, Arial, sans-serif" font-size="8.5" font-weight="800" letter-spacing="1.8" fill="#5D7F83">YOUR VERIFICATION CODE</text>
+<circle cx="88" cy="142" r="10.5" fill="none" stroke="#BAAEC6" stroke-width="1.5"></circle><circle cx="88" cy="142" r="10.5" fill="#604073" style="transform-box:fill-box;transform-origin:center;animation:cdD0 6s cubic-bezier(.2,.8,.2,1) infinite"></circle><circle cx="117" cy="142" r="10.5" fill="none" stroke="#BAAEC6" stroke-width="1.5"></circle><circle cx="117" cy="142" r="10.5" fill="#604073" style="transform-box:fill-box;transform-origin:center;animation:cdD1 6s cubic-bezier(.2,.8,.2,1) infinite"></circle><circle cx="146" cy="142" r="10.5" fill="none" stroke="#BAAEC6" stroke-width="1.5"></circle><circle cx="146" cy="142" r="10.5" fill="#604073" style="transform-box:fill-box;transform-origin:center;animation:cdD2 6s cubic-bezier(.2,.8,.2,1) infinite"></circle><circle cx="175" cy="142" r="10.5" fill="none" stroke="#BAAEC6" stroke-width="1.5"></circle><circle cx="175" cy="142" r="10.5" fill="#604073" style="transform-box:fill-box;transform-origin:center;animation:cdD3 6s cubic-bezier(.2,.8,.2,1) infinite"></circle><circle cx="204" cy="142" r="10.5" fill="none" stroke="#BAAEC6" stroke-width="1.5"></circle><circle cx="204" cy="142" r="10.5" fill="#604073" style="transform-box:fill-box;transform-origin:center;animation:cdD4 6s cubic-bezier(.2,.8,.2,1) infinite"></circle><circle cx="233" cy="142" r="10.5" fill="none" stroke="#BAAEC6" stroke-width="1.5"></circle><circle cx="233" cy="142" r="10.5" fill="#604073" style="transform-box:fill-box;transform-origin:center;animation:cdD5 6s cubic-bezier(.2,.8,.2,1) infinite"></circle>
+<g style="animation:cdOk 6s ease-out infinite"><text x="160" y="174" text-anchor="middle" font-family="Open Sauce Sans, Arial, sans-serif" font-size="8" font-weight="700" letter-spacing="1.2" fill="#3A2049">✓ VERIFIED</text></g>
+</g>
+<g transform="translate(262 54)"><path d="M0 -13C1.6 -2.6 2.6 -1.6 13 0C2.6 1.6 1.6 2.6 0 13C-1.6 2.6 -2.6 1.6 -13 0C-2.6 -1.6 -1.6 -2.6 0 -13Z" fill="#604073" style="transform-box:fill-box;transform-origin:center;animation:cdTw1 6s ease-in-out infinite"></path></g>
+<g transform="translate(60 192)"><path d="M0 -8C1.0 -1.6 1.6 -1.0 8 0C1.6 1.0 1.0 1.6 0 8C-1.0 1.6 -1.6 1.0 -8 0C-1.6 -1.0 -1.0 -1.6 0 -8Z" fill="#9C84B0" style="transform-box:fill-box;transform-origin:center;animation:cdTw2 6s ease-in-out infinite"></path></g>
+</g>
+</svg></sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:480,&quot;height&quot;:360},&quot;kind&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;envelope&quot;,&quot;review&quot;,&quot;approved&quot;,&quot;ticket&quot;,&quot;sign&quot;,&quot;deliver&quot;,&quot;code&quot;],&quot;default&quot;:&quot;envelope&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;bg&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#F8F8F8&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#F8F8F8&quot;,&quot;#FFFFFF&quot;,&quot;#F3EEF7&quot;,&quot;#DAEBEB&quot;]}}">
+class Component extends DCLogic {
+  renderVals(){const k=this.props.kind||'envelope';
+    return {bg:this.props.bg||'#F8F8F8',isEnv:k==='envelope',isReview:k==='review',isApproved:k==='approved',isTicket:k==='ticket',isSign:k==='sign',isDeliver:k==='deliver',isCode:k==='code'};}
+}
+</script>
+</body>
+</html>
