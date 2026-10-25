@@ -1,73 +1,219 @@
 {
-  "title": "Wholesale Purchasing Agreement",
-  "company": "Sparkling Jewelry Inc.",
-  "version": "2026-10-draft",
-  "status": "draft_legal_review",
-  "note": "Working draft for legal review. Bracketed items are business decisions still to be confirmed. Not legally approved.",
-  "sections": [
-    {"n":1,"h":"Parties and Account Eligibility","p":[
-      "This Wholesale Purchasing Agreement (the \"Agreement\") is between Sparkling Jewelry Inc. (\"Sparkling\") and the business identified above (the \"Customer\").",
-      "Wholesale accounts are available only to businesses that purchase for resale or for use in their trade. Sparkling may approve, limit, suspend or close an account at its discretion. Signing this Agreement does not by itself approve the Customer's account, credit terms or memo privileges."
-    ]},
-    {"n":2,"h":"Orders and Order Acceptance","p":[
-      "Order requests, holds and quotes submitted through the website, by phone, email or messaging are requests only. An order is accepted when Sparkling confirms it in writing or ships the goods.",
-      "Sparkling may decline or partially fill any order. Holds placed at the Customer's request are released after [hold period] unless extended in writing."
-    ]},
-    {"n":3,"h":"Inventory Availability and Pricing","p":[
-      "Inventory shown online changes frequently and is subject to prior sale. Prices are wholesale prices for the approved account and may change without notice until an order is confirmed.",
-      "The price confirmed for an accepted order applies to that order. Obvious pricing or listing errors may be corrected before shipment."
-    ]},
-    {"n":4,"h":"Payment Obligations","p":[
-      "Unless approved credit terms apply, payment is due before shipment by the payment methods Sparkling accepts.",
-      "Amounts not paid when due may be subject to a late charge of [late charge rate], not to exceed the maximum permitted by law, plus reasonable collection costs."
-    ]},
-    {"n":5,"h":"Approved Credit Terms","p":[
-      "Credit terms, if any, are offered only by separate written approval and may require a Credit Agreement and a Personal Guaranty. Sparkling may change or withdraw credit terms at any time.",
-      "If the Customer fails to pay when due, Sparkling may suspend shipments, require prepayment and declare all outstanding balances immediately due."
-    ]},
-    {"n":6,"h":"Special Orders and Custom Manufacturing","p":[
-      "Special orders and custom pieces are made to the Customer's specifications and may require a deposit of [deposit amount].",
-      "Confirmed special and custom orders cannot be cancelled or returned except as stated in the order confirmation."
-    ]},
-    {"n":7,"h":"Shipping, Insurance, Risk of Loss and Inspection","p":[
-      "Goods ship by the method confirmed for the order. Shipping and insurance charges are the Customer's responsibility unless stated otherwise.",
-      "Risk of loss passes to the Customer [when goods are delivered to the carrier / on delivery]. The Customer must inspect each shipment and report any shortage, damage or discrepancy within [inspection period] of delivery."
-    ]},
-    {"n":8,"h":"Returns, Cancellations and Discrepancies","p":[
-      "Returns require prior written authorization and must be received within [return period] in original condition with all certificates and documentation.",
-      "Returns may be subject to a restocking fee of [restocking fee]. Special orders, custom pieces and altered goods are not returnable."
-    ]},
-    {"n":9,"h":"Memo and Consignment Transactions","p":[
-      "Goods released on memo remain Sparkling's property until paid in full. Memo transactions are governed by a separate Memo Agreement and the terms on each memo.",
-      "The Customer is responsible for memo goods while in its possession and must return or pay for them by the memo due date."
-    ]},
-    {"n":10,"h":"Product Specifications and Lab-Grown Diamond Disclosures","p":[
-      "Diamonds sold by Sparkling are laboratory-grown unless clearly stated otherwise. Grading reports are issued by independent laboratories and reflect the laboratory's opinion.",
-      "The Customer agrees to disclose to its own customers that lab-grown diamonds are laboratory-grown and to follow applicable advertising and disclosure rules."
-    ]},
-    {"n":11,"h":"Resale Certificates and Taxes","p":[
-      "The Customer must provide a valid resale or exemption certificate to purchase without sales tax. Without one, applicable taxes will be charged.",
-      "The Customer is responsible for any tax, duty or fee that applies to its purchases."
-    ]},
-    {"n":12,"h":"Account Security and Authorized Transactions","p":[
-      "The Customer is responsible for keeping its login credentials secure and for orders placed through its account by its authorized users.",
-      "The Customer must notify Sparkling promptly of any unauthorized use of its account."
-    ]},
-    {"n":13,"h":"Defaults, Remedies and Collection","p":[
-      "A default includes non-payment, breach of this Agreement, insolvency or providing materially false information.",
-      "On default, Sparkling may suspend or close the account, recover memo goods, and pursue amounts owed together with reasonable collection costs and attorneys' fees where permitted by law."
-    ]},
-    {"n":14,"h":"Dispute Resolution and Governing Law","p":[
-      "This Agreement is governed by the laws of the State of [California], without regard to conflict-of-law rules.",
-      "Disputes will be resolved [in the state or federal courts located in Los Angeles County, California / by binding arbitration], unless the parties agree otherwise in writing."
-    ]},
-    {"n":15,"h":"Electronic Records and Acceptance","p":[
-      "The parties agree that this Agreement may be signed electronically and that electronic signatures and records have the same effect as paper originals.",
-      "The Customer may request a copy of this Agreement at any time from its account."
-    ]},
-    {"n":16,"h":"Signer Authority and Execution","p":[
-      "The person signing below confirms that they are authorized to sign this Agreement on behalf of the Customer and to bind the Customer to its terms.",
-      "This Agreement takes effect when signed by the Customer and accepted by Sparkling. Changes to the Customer's legal details after signing may require a new signed Agreement."
-    ]}
-  ]
+ "title": "Wholesale Account Agreement",
+ "company": "Sparkling Jewelry Inc.",
+ "version": "2026-10-25",
+ "status": "final",
+ "note": "",
+ "sections": [
+  {
+   "n": 1,
+   "h": "Parties and Account Eligibility",
+   "p": [
+    "This Wholesale Account Agreement (the \"Agreement\") is between Sparkling Jewelry Inc. (\"Sparkling\") and the business identified above (the \"Customer\"). Wholesale accounts are available only to businesses that purchase for resale or for use in their trade. Sparkling may approve, limit, suspend or close an account at its discretion. Signing this Agreement does not by itself approve the Customer's account, credit terms or memo privileges."
+   ]
+  },
+  {
+   "n": 2,
+   "h": "Orders and Order Acceptance",
+   "p": [
+    "Order requests, holds and quotes submitted through the website, by phone, email or messaging are requests only. An order is accepted when Sparkling confirms it in writing or ships the goods. Sparkling may decline or partially fill any order. Holds placed at the Customer's request are released after 3 business days unless extended in writing."
+   ]
+  },
+  {
+   "n": 3,
+   "h": "Inventory Availability and Pricing",
+   "p": [
+    "Inventory shown online changes frequently and is subject to prior sale. Prices are wholesale prices for the approved account and may change without notice until an order is confirmed. The price confirmed for an accepted order applies to that order. Obvious pricing or listing errors may be corrected before shipment."
+   ]
+  },
+  {
+   "n": 4,
+   "h": "Payment Obligations",
+   "p": [
+    "Unless approved credit terms apply, payment is due before shipment by the payment methods Sparkling accepts. Amounts not paid when due accrue a late charge of 1.5% per month or the maximum permitted by law, whichever is lower, plus reasonable collection costs."
+   ]
+  },
+  {
+   "n": 5,
+   "h": "Approved Credit Terms",
+   "p": [
+    "Credit terms, if any, are offered only by separate written approval and may require a Credit Agreement and a Personal Guaranty, which is a separate instrument signed by the guarantor in an individual capacity. Sparkling may change or withdraw credit terms at any time. If the Customer fails to pay when due, Sparkling may suspend shipments, require prepayment and declare all outstanding balances immediately due."
+   ]
+  },
+  {
+   "n": 6,
+   "h": "Special Orders",
+   "p": [
+    "Special orders, such as goods sourced, reserved or prepared at the Customer's request, may require a non-refundable deposit of 50%. Confirmed special orders cannot be cancelled or returned except as stated in the order confirmation."
+   ]
+  },
+  {
+   "n": 7,
+   "h": "Shipping, Insurance, Risk of Loss and Inspection",
+   "p": [
+    "Goods ship by the method confirmed for the order. Shipping and insurance charges are the Customer's responsibility unless stated otherwise. Risk of loss passes to the Customer when goods are delivered to the carrier. The Customer must inspect each shipment and report any shortage, damage or discrepancy in writing within 48 hours of delivery; otherwise the shipment is deemed accepted as delivered."
+   ]
+  },
+  {
+   "n": 8,
+   "h": "Returns, Cancellations and Discrepancies",
+   "p": [
+    "Purchased goods are returnable only with Sparkling's prior written approval, within 10 days of delivery, in original condition with all grading reports and documentation. Approved returns are subject to a restocking fee of up to 40%. Special orders and altered, set or damaged goods are not returnable."
+   ]
+  },
+  {
+   "n": 9,
+   "h": "Memo and Consignment Transactions",
+   "p": [
+    "Goods released on memo remain Sparkling's property until invoiced and paid in full. Memo goods are governed by the memo terms printed on each memo, which control for those goods, and by any separate Memo Agreement. The Customer is responsible for memo goods while in its possession and must return or pay for them by the memo due date. Memo goods not returned by the due date are deemed sold at the memo's stated value and are payable immediately."
+   ]
+  },
+  {
+   "n": 10,
+   "h": "Product Specifications and Lab-Grown Diamond Disclosures",
+   "p": [
+    "Diamonds sold by Sparkling are laboratory-grown unless clearly stated otherwise. Grading reports are issued by independent laboratories and reflect the laboratory's opinion. The Customer agrees to disclose to its own customers that lab-grown diamonds are laboratory-grown and to follow applicable advertising and disclosure rules, including the FTC Jewelry Guides."
+   ]
+  },
+  {
+   "n": 11,
+   "h": "Resale Certificates and Taxes",
+   "p": [
+    "The Customer must provide a valid resale or exemption certificate to purchase without sales tax. Without one, applicable taxes will be charged. The Customer is responsible for any tax, duty or fee that applies to its purchases."
+   ]
+  },
+  {
+   "n": 12,
+   "h": "Account Security and Authorized Transactions",
+   "p": [
+    "The Customer is responsible for keeping its login credentials secure and for orders placed through its account by its authorized users. The Customer must notify Sparkling promptly of any unauthorized use of its account."
+   ]
+  },
+  {
+   "n": 13,
+   "h": "Defaults, Remedies and Collection",
+   "p": [
+    "A default includes non-payment, a chargeback or payment reversal, breach of this Agreement or any memo terms, a default owed to any Sparkling affiliate, a default or revocation under any Personal Guaranty, insolvency, any lien on or seizure of the Customer's goods, or providing materially false information. On default, Sparkling may suspend or close the account, declare all balances immediately due, recover memo goods and unpaid goods at the Customer's expense, and pursue amounts owed together with reasonable collection costs and attorneys' fees."
+   ]
+  },
+  {
+   "n": 14,
+   "h": "Dispute Resolution and Governing Law",
+   "p": [
+    "This Agreement is governed by the laws of the State of California, without regard to conflict-of-law rules. Disputes will be resolved in the state or federal courts located in Los Angeles County, California, and the Customer consents to their jurisdiction. Sparkling may also bring collection claims in small claims court. The prevailing party recovers its attorneys' fees and costs."
+   ]
+  },
+  {
+   "n": 15,
+   "h": "Electronic Records and Acceptance",
+   "p": [
+    "The parties agree that this Agreement may be signed electronically and that electronic signatures and records have the same effect as paper originals. The Customer may request a copy of this Agreement at any time from its account."
+   ]
+  },
+  {
+   "n": 16,
+   "h": "Signer Authority and Execution",
+   "p": [
+    "The person signing below confirms that they are authorized to sign this Agreement on behalf of the Customer and to bind the Customer to its terms. This Agreement takes effect when signed by the Customer and accepted by Sparkling. Sparkling accepts by approving the Customer's account in writing or by email. The signer signs only in a representative capacity for the Customer and does not become personally liable by signing this Agreement; any personal guaranty requires its own separate signature. Changes to the Customer's legal details after signing may require a new signed Agreement."
+   ]
+  },
+  {
+   "n": 17,
+   "h": "Warranty Disclaimer",
+   "p": [
+    "EXCEPT AS EXPRESSLY STATED IN THIS AGREEMENT, ALL GOODS ARE SOLD \"AS IS,\" AND SPARKLING DISCLAIMS ALL IMPLIED WARRANTIES, INCLUDING MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. SPARKLING DOES NOT WARRANT THE ACCURACY OF THIRD-PARTY GRADING REPORTS."
+   ]
+  },
+  {
+   "n": 18,
+   "h": "Limitation of Liability",
+   "p": [
+    "SPARKLING'S TOTAL LIABILITY FOR ANY CLAIM IS LIMITED TO THE PRICE PAID FOR THE GOODS INVOLVED. SPARKLING IS NOT LIABLE FOR LOST PROFITS OR FOR INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES. Any claim against Sparkling must be brought within one (1) year after delivery."
+   ]
+  },
+  {
+   "n": 19,
+   "h": "Security Interest",
+   "p": [
+    "To secure payment of all amounts owed, the Customer grants Sparkling a security interest in all goods sold on credit or released on memo, and in all their proceeds, until paid in full. The Customer authorizes Sparkling to file UCC financing statements."
+   ]
+  },
+  {
+   "n": 20,
+   "h": "Payments and Chargebacks",
+   "p": [
+    "Payments are final. The Customer will not initiate a chargeback or payment reversal for an order that was delivered and not returned under Section 8. Any chargeback is a default, and the Customer will repay the disputed amount plus fees and collection costs."
+   ]
+  },
+  {
+   "n": 21,
+   "h": "Customer Representations and Verification",
+   "p": [
+    "The Customer confirms that all information it has provided is true and complete. It confirms that neither it nor its owners appear on any U.S. sanctions list (OFAC), and that it complies with anti-money-laundering laws. The Customer authorizes Sparkling to verify its information and to contact its bank and trade references. Where a personal guaranty is given, the guarantor authorizes Sparkling to obtain a personal credit report."
+   ]
+  },
+  {
+   "n": 22,
+   "h": "Indemnification",
+   "p": [
+    "The Customer will indemnify and hold Sparkling harmless from claims, losses and costs, including attorneys' fees, arising from the Customer's resale, advertising, or nondisclosure of lab-grown diamonds, or from its breach of this Agreement."
+   ]
+  },
+  {
+   "n": 23,
+   "h": "Images and Branding",
+   "p": [
+    "The Customer may use Sparkling's product images and descriptions only to sell Sparkling goods. It may not imply that it is Sparkling or affiliated with Sparkling."
+   ]
+  },
+  {
+   "n": 24,
+   "h": "Order of Terms",
+   "p": [
+    "This Agreement, Sparkling's order confirmations, memo terms and the website Terms of Sale make up the whole agreement. If they conflict, this Agreement controls, except that memo terms control for memo goods. Terms in the Customer's purchase orders or other documents are rejected unless Sparkling agrees to them in writing."
+   ]
+  },
+  {
+   "n": 25,
+   "h": "Confidential Pricing",
+   "p": [
+    "Sparkling's wholesale prices, promotions, account terms and non-public product information are confidential. The Customer will not share them with any third party, other than its own advisors bound to confidentiality."
+   ]
+  },
+  {
+   "n": 26,
+   "h": "Setoff and Affiliates",
+   "p": [
+    "Sparkling may set off any amount the Customer owes to Sparkling or any Sparkling affiliate against any amount Sparkling or its affiliates owe the Customer. Sparkling may assign this Agreement, or any amounts owed under it, to an affiliate, lender or successor without the Customer's consent."
+   ]
+  },
+  {
+   "n": 27,
+   "h": "Force Majeure",
+   "p": [
+    "Sparkling is not liable for delay or failure to perform caused by events beyond its reasonable control, including carrier delays, supply disruptions, natural disasters, government action, or cyber incidents. This section does not excuse the Customer's payment obligations."
+   ]
+  },
+  {
+   "n": 28,
+   "h": "Termination",
+   "p": [
+    "Either party may end this Agreement on written notice. Sparkling may end it immediately on a default. Termination does not affect orders already accepted, memo goods outstanding, or any amounts owed."
+   ]
+  },
+  {
+   "n": 29,
+   "h": "Updates",
+   "p": [
+    "Sparkling may update this Agreement by giving the Customer notice by email or through its account. Updates apply only to orders placed after the update takes effect. Placing an order after that date constitutes acceptance."
+   ]
+  },
+  {
+   "n": 30,
+   "h": "General",
+   "p": [
+    "This Agreement is the entire agreement on its subject and may be amended only by a signed writing or under Section 29. If any part is held unenforceable, the rest stays in effect. The Customer may not assign this Agreement without Sparkling's written consent. Notices may be sent to the email addresses on file. Sections 4, 9, 13, 14, 17 through 26 and this Section survive termination. Sparkling's failure to enforce a term is not a waiver of it."
+   ]
+  }
+ ]
 }
