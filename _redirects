@@ -1,1 +1,3 @@
 /  reference=:t  /trade-reference/?t=:t  302!
+/trade-reference/*  /index.html  200
+/trade-reference  /index.html  200
