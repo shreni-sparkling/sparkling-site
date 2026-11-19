@@ -1,5 +1,0 @@
-<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><title>relay</title>
-<button id="b" style="font:20px system-ui;padding:30px 60px;margin:40px">COPY</button><pre id="o">ready</pre>
-<script>
-document.getElementById('b').onclick=async()=>{const o=document.getElementById('o');try{const t=await (await fetch('d-054b184a429b1c0ef6d141c5.txt',{cache:'no-store'})).text();const h=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t)))).map(x=>x.toString(16).padStart(2,'0')).join('');await navigator.clipboard.writeText(t);o.textContent='copied '+t.length+' chars sha '+h+(h==='74c651b5b85aa8d0d5217b4a1457948ae25c8f98bda49ed944896c56b2d43176'?' MATCH':' MISMATCH');}catch(e){o.textContent='ERR '+e.message}};
-</script>
